@@ -7,12 +7,14 @@ class inflist.Views.HomePageView extends Backbone.View
   initialize: ->
     @subviews = []
     @subviews.push new inflist.Views.ItemListView(collection: @collection)
+    @collection.on 'fetchStart', @showLoadingMessage, @
+    @collection.on 'fetchComplete', @hideLoadingMessage, @
     
   render: ->
     @$el.html @template
       title: "InfList Demo"
 
-    $content = @$el.find(".content")
+    $content = @$el.find(".content .subviews")
     $content.append(subview.render().el) for subview in @subviews
 
     @
@@ -20,3 +22,11 @@ class inflist.Views.HomePageView extends Backbone.View
   delegateEvents: ->
     subview.delegateEvents() for subview in @subviews
     super
+
+  showLoadingMessage: ->
+    $loadingMessage = @$el.find("#loading")
+    $loadingMessage.removeClass('hidden')
+
+  hideLoadingMessage: ->
+    $loadingMessage = @$el.find("#loading")
+    $loadingMessage.addClass('hidden')

@@ -11,7 +11,7 @@ class inflist.Views.ItemListView extends Backbone.View
     @currentlyFetching = false
 
     $(window).scroll =>
-      if !@collection.isFetching && $(window).scrollTop() > $(document).height() - $(window).height() - 50
+      if !@collection.isFetching && ($(window).scrollTop() > $(document).height() - $(window).height() - 50)
         @collection.fetchNextPage()
 
   addOne: (model) ->

@@ -9,3 +9,11 @@ body {
 ul#items {
   overflow: auto;
 }
+#loading {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 30px;
+}
+.hidden {
+  display: none;
+}
