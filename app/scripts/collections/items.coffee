@@ -2,7 +2,6 @@ class inflist.Collections.ItemCollection extends Backbone.Collection
   isFetching: false
 
   fetchNextPage: ->
-    console.log "fetching"
     @trigger "fetchStart"
     @isFetching = true
     fetch = =>
@@ -12,5 +11,6 @@ class inflist.Collections.ItemCollection extends Backbone.Collection
       @isFetching = false
       @trigger "fetchComplete"
 
+    # make it look like an ajax call
     setTimeout(fetch, 1000)
 
