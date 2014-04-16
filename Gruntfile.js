@@ -195,14 +195,14 @@ module.exports = function (grunt) {
             }
         },
         cssmin: {
-            dist: {
-                files: {
-                    '<%= yeoman.dist %>/styles/main.css': [
-                        '.tmp/styles/{,*/}*.css',
-                        '<%= yeoman.app %>/styles/{,*/}*.css'
-                    ]
-                }
-            }
+            //dist: {
+                //files: {
+                    //'<%= yeoman.dist %>/styles/main.css': [
+                        //'.tmp/styles/{,*/}*.css',
+                        //'<%= yeoman.app %>/styles/{,*/}*.css'
+                    //]
+                //}
+            //}
         },
         htmlmin: {
             dist: {
@@ -316,7 +316,6 @@ module.exports = function (grunt) {
         'handlebars',
         'compass:dist',
         'useminPrepare',
-        'imagemin',
         'htmlmin',
         'concat',
         'cssmin',
