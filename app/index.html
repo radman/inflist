@@ -19,20 +19,7 @@
         <!-- endbuild -->
     </head>
     <body>
-        <div class="container">
-            <div class="hero-unit">
-                <h1>'Allo, 'Allo!</h1>
-                <p>You now have</p>
-                <ul>
-                    <li>HTML5 Boilerplate</li>
-                    <li>jQuery</li>
-                    <li>Backbone.js</li>
-                    <li>Underscore.js</li>
-                </ul>
-                <p>installed.</p>
-                <h3>Enjoy coding! - Yeoman</h3>
-            </div>
-        </div>
+        <div id="page-container"></div>
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -50,11 +37,15 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/handlebars/handlebars.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <script src="scripts/templates.js"></script>
+        <script src="scripts/routes/main.js"></script>
+        <script src="scripts/views/home_page.js"></script>
+        <script src="scripts/views/item_list.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -53,11 +53,11 @@ module.exports = function (grunt) {
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
                 ]
             },
-            jst: {
+            handlebars: {
                 files: [
-                    '<%= yeoman.app %>/scripts/templates/*.ejs'
+                    '<%= yeoman.app %>/scripts/templates/*.hbs'
                 ],
-                tasks: ['jst']
+                tasks: ['handlebars']
             }
         },
         connect: {
@@ -245,10 +245,13 @@ module.exports = function (grunt) {
                 rjsConfig: '<%= yeoman.app %>/scripts/main.js'
             }
         },
-        jst: {
+        handlebars: {
             compile: {
+                options: {
+                    namespace: 'JST'
+                },
                 files: {
-                    '.tmp/scripts/templates.js': ['<%= yeoman.app %>/scripts/templates/*.ejs']
+                    '.tmp/scripts/templates.js': ['<%= yeoman.app %>/scripts/templates/*.hbs']
                 }
             }
         },
@@ -278,7 +281,7 @@ module.exports = function (grunt) {
                 'clean:server',
                 'coffee',
                 'createDefaultTemplate',
-                'jst',
+                'handlebars',
                 'compass:server',
                 'connect:test:keepalive'
             ]);
@@ -288,7 +291,7 @@ module.exports = function (grunt) {
             'clean:server',
             'coffee:dist',
             'createDefaultTemplate',
-            'jst',
+            'handlebars',
             'compass:server',
             'connect:livereload',
             'open',
@@ -300,7 +303,7 @@ module.exports = function (grunt) {
         'clean:server',
         'coffee',
         'createDefaultTemplate',
-        'jst',
+        'handlebars',
         'compass',
         'connect:test',
         'mocha'
@@ -310,7 +313,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'coffee',
         'createDefaultTemplate',
-        'jst',
+        'handlebars',
         'compass:dist',
         'useminPrepare',
         'imagemin',

@@ -5,7 +5,8 @@ window.inflist =
   Routers: {}
   init: ->
     'use strict'
-    console.log 'Hello from Backbone!'
+    inflist.mainRouter = new inflist.Routers.MainRouter()
+    Backbone.history.start()
 
 $ ->
   'use strict'
