@@ -6,7 +6,7 @@ class inflist.Views.HomePageView extends Backbone.View
 
   initialize: ->
     @subviews = []
-    @subviews.push new inflist.Views.ItemListView()
+    @subviews.push new inflist.Views.ItemListView(collection: @collection)
     
   render: ->
     @$el.html @template
