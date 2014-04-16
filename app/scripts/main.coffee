@@ -11,3 +11,4 @@ window.inflist =
 $ ->
   'use strict'
   inflist.init();
+
